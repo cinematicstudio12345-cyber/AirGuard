@@ -1,0 +1,7 @@
+{
+  "name": "Copy of Copy of AirLens-part2",
+  "description": "A fully featured 3D Environmental Monitor and Health Coach powered by Gemini and WeatherAPI.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}

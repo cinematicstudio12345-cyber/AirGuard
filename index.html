@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AirGuard Pro</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              slate: {
+                850: '#1e293b',
+                950: '#020617',
+              }
+            },
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            }
+          }
+        }
+      }
+    </script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    
+    <!-- UMD Scripts for PDF Generation (Bypasses Babel Runtime Errors) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;900&display=swap');
+
+      body {
+        background-color: #0f172a;
+        color: white;
+        font-family: 'Inter', sans-serif;
+        overflow-x: hidden;
+        overscroll-behavior: none;
+      }
+      
+      /* Dark Mode Base */
+      html.dark body {
+        background-color: #020617;
+        color: white;
+      }
+      
+      /* Light Mode Base */
+      html:not(.dark) body {
+        background-color: #f8fafc;
+        color: #0f172a;
+      }
+
+      /* Custom Scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #06b6d4;
+        border-radius: 4px;
+      }
+      
+      .neon-text {
+        text-shadow: 0 0 10px rgba(6, 182, 212, 0.5);
+      }
+      
+      /* Leaflet Customization */
+      .leaflet-container {
+        font-family: 'Inter', sans-serif;
+      }
+      .leaflet-popup-content-wrapper, .leaflet-popup-tip {
+        backdrop-filter: blur(8px);
+      }
+      .dark .leaflet-popup-content-wrapper {
+        background: rgba(15, 23, 42, 0.9) !important;
+        color: white !important;
+        border: 1px solid rgba(148, 163, 184, 0.2);
+      }
+      .leaflet-popup-content {
+        margin: 10px !important;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.1/",
+    "react": "https://aistudiocdn.com/react@^19.2.1",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.31.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.1/",
+    "react-dom": "https://aistudiocdn.com/react-dom@^19.2.1",
+    "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.555.0",
+    "leaflet": "https://unpkg.com/leaflet@1.9.4/dist/leaflet-src.esm.js",
+    "firebase/app": "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js",
+    "firebase/auth": "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js",
+    "firebase/firestore": "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js",
+    "firebase/": "https://aistudiocdn.com/firebase@^12.6.0/"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
